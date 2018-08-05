@@ -43,11 +43,13 @@ public class UserService implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        Lists.newArrayList(User.builder().userEmail("email1@em.com").username("User 1").build(),
-                User.builder().userEmail("email2@em.com").username("User 2").build(),
-                User.builder().userEmail("email3@em.com").username("User 3").build(),
-                User.builder().userEmail("email4@em.com").username("User 4").build(),
-                User.builder().userEmail("email5@em.com").username("User 5").build()).forEach(this::addUser);
+        Lists.newArrayList(
+                User.builder().userEmail("email1@em.com").username("User 1").shortDescription("Short description 1").build(),
+                User.builder().userEmail("email2@em.com").username("User 2").shortDescription("Short description 2").build(),
+                User.builder().userEmail("email3@em.com").username("User 3").shortDescription("Short description 3").build(),
+                User.builder().userEmail("email4@em.com").username("User 4").shortDescription("Short description 4").build(),
+                User.builder().userEmail("email5@em.com").username("User 5").shortDescription("Short description 5").build())
+                .forEach(this::addUser);
         log.info("loading initial data : {}", this.mapOfUsers.toString());
     }
 }

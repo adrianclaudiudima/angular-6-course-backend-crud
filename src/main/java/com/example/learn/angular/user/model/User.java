@@ -12,13 +12,16 @@ import lombok.NoArgsConstructor;
 @Builder
 public class User {
 
-    @JsonProperty("id")
+    @JsonProperty("userId")
     private Long id;
 
-    @JsonProperty("username")
+    @JsonProperty("userName")
     private String username;
 
     @JsonProperty("userEmail")
     private String userEmail;
+
+    @JsonProperty("userDescription")
+    private String shortDescription;
 
 }
